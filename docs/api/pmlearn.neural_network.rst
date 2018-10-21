@@ -1,6 +1,13 @@
 pmlearn.neural\_network package
 ===============================
 
+Subpackages
+-----------
+
+.. toctree::
+
+    pmlearn.neural_network.tests
+
 Submodules
 ----------
 

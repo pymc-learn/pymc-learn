@@ -13,4 +13,4 @@ Assuming a standard Python environment is installed on your machine (including p
 
 This also installs required dependencies including Theano.
 For alternative Theano installations (e.g., gpu), please see the
-instructions on the main `Theano webpage <http://deeplearning.net/software/theano/>`_ and `TensorFlow webpage <https://www.tensorflow.org/>`_, respectively.
+instructions on the main `Theano webpage <http://deeplearning.net/software/theano/>`_.

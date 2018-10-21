@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pylint --rcfile=.pylintrc pymc-learn
+pylint --rcfile=.pylintrc pmlearn

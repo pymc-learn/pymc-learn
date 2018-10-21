@@ -1,6 +1,13 @@
 pmlearn.naive\_bayes package
 ============================
 
+Subpackages
+-----------
+
+.. toctree::
+
+    pmlearn.naive_bayes.tests
+
 Submodules
 ----------
 

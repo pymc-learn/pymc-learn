@@ -2,7 +2,7 @@
 Naive Bayes models.
 """
 
-# Authors: Rémi Louf <remilouf@gmail.com>, <remi@sounds.am>
+# Authors: Remi Louf <remilouf@gmail.com>, <remi@sounds.am>
 #          Daniel Emaasit <daniel.emaasit@gmail.com>
 #
 # License: BSD 3 clause

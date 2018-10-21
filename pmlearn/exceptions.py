@@ -21,7 +21,7 @@ class NotFittedError(ValueError, AttributeError):
     ... except NotFittedError as e:
     ...     print(repr(e))
     ...                        # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-    NotFittedError('This GaussianProcessRegressor instance is not fitted yet'...)
+    NotFittedError('This GaussianProcessRegressor instance is not fitted yet'.)
     """
 
 

@@ -10,5 +10,5 @@ if [[ "$RUN_PYLINT" == "true" ]]; then
     . ./scripts/lint.sh
 fi
 
-THEANO_FLAGS="floatX=${FLOATX},gcc.cxxflags='-march=core2'" pytest -v --cov=pymc-learn "$@"
+THEANO_FLAGS="floatX=${FLOATX},gcc.cxxflags='-march=core2'" pytest -v --cov=pmlearn/tests "$@"
 

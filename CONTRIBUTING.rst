@@ -81,7 +81,7 @@ Pull Request Checklist
    .. code-block:: bash
 
        conda activate myenv
-       python -m unittest discover -cv
+       python -m pytest
 
    NOTE: On Windows, in your Anaconda Prompt, run ``activate myenv``.
 

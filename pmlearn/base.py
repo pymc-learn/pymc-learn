@@ -35,6 +35,8 @@ class BayesianModel(BaseEstimator):
         self.num_training_samples = None
 
     def create_model(self):
+        """Create model
+        """
         raise NotImplementedError
 
     def _set_shared_vars(self, shared_vars):
@@ -127,15 +129,6 @@ class BayesianModel(BaseEstimator):
             inference_args = None
 
         return inference_args
-
-    # def fit(self):
-    #     raise NotImplementedError
-    #
-    # def predict(self):
-    #     raise NotImplementedError
-    #
-    # def score(self):
-    #     raise NotImplementedError
 
     def save(self, file_prefix, custom_params=None):
         """

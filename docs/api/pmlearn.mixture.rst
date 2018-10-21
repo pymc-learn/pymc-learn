@@ -1,6 +1,13 @@
 pmlearn.mixture package
 =======================
 
+Subpackages
+-----------
+
+.. toctree::
+
+    pmlearn.mixture.tests
+
 Submodules
 ----------
 

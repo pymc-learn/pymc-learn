@@ -1,6 +1,13 @@
 pmlearn.linear\_model package
 =============================
 
+Subpackages
+-----------
+
+.. toctree::
+
+    pmlearn.linear_model.tests
+
 Submodules
 ----------
 

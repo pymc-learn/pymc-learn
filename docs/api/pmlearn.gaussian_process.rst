@@ -1,6 +1,13 @@
 pmlearn.gaussian\_process package
 =================================
 
+Subpackages
+-----------
+
+.. toctree::
+
+    pmlearn.gaussian_process.tests
+
 Submodules
 ----------
 

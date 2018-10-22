@@ -8,7 +8,7 @@ import numpy as np
 import pymc3 as pm
 import theano
 
-from ..exceptions import PymcLearnError
+from ..exceptions import NotFittedError
 from ..base import BayesianModel, BayesianRegressorMixin
 
 from .kernels import RBF
@@ -34,7 +34,7 @@ class GaussianProcessRegressorMixin(BayesianRegressorMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError('Run fit on the model before predict.')
+            raise NotFittedError('Run fit on the model before predict.')
 
         num_samples = X.shape[0]
 

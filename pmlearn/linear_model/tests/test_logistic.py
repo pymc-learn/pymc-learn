@@ -7,7 +7,7 @@ import pandas as pd
 from pymc3 import summary
 from sklearn.model_selection import train_test_split
 
-from pmlearn.exceptions import PymcLearnError
+from pmlearn.exceptions import NotFittedError
 from pmlearn.linear_model import HierarchicalLogisticRegression
 
 
@@ -89,7 +89,7 @@ class HierarchicalLogisticRegressionPredictProbaTestCase(HierarchicalLogisticReg
         self.assertEqual(stds.shape, self.Y_test.shape)
 
     def test_predict_proba_raises_error_if_not_fit(self):
-        with self.assertRaises(PymcLearnError) as no_fit_error:
+        with self.assertRaises(NotFittedError) as no_fit_error:
             test_HLR = HierarchicalLogisticRegression()
             test_HLR.predict_proba(self.X_train, self.cat_train)
 

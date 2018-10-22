@@ -9,7 +9,7 @@ import pymc3 as pm
 import theano
 import theano.tensor as tt
 
-from ..exceptions import PymcLearnError
+from ..exceptions import NotFittedError
 from ..base import BayesianModel, BayesianDensityMixin
 from .util import logp_gmix
 
@@ -148,7 +148,7 @@ class DirichletProcessMixture(BayesianModel, BayesianDensityMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError('Run fit on the model before predict.')
+            raise NotFittedError('Run fit on the model before predict.')
 
         # num_samples = X.shape[0]
 

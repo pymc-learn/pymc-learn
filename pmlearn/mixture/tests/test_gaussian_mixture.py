@@ -9,7 +9,7 @@ from pymc3 import summary
 from sklearn.mixture import GaussianMixture as skGaussianMixture
 from sklearn.model_selection import train_test_split
 
-from pmlearn.exceptions import PymcLearnError
+from pmlearn.exceptions import NotFittedError
 from pmlearn.mixture import GaussianMixture
 
 
@@ -149,7 +149,7 @@ class GaussianMixturePredictTestCase(GaussianMixtureTestCase):
 
     def test_predict_raises_error_if_not_fit(self):
         print('')
-        with self.assertRaises(PymcLearnError) as no_fit_error:
+        with self.assertRaises(NotFittedError) as no_fit_error:
             test_GMM = GaussianMixture()
             test_GMM.predict(self.X_train)
 

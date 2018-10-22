@@ -4,8 +4,7 @@ The :mod:`pmlearn.exceptions` module includes all custom warnings and error
 classes used across pymc-learn.
 """
 
-__all__ = ['NotFittedError',
-           'PymcLearnError']
+__all__ = ['NotFittedError']
 
 
 class NotFittedError(ValueError, AttributeError):
@@ -23,7 +22,3 @@ class NotFittedError(ValueError, AttributeError):
     ...                        # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
     NotFittedError('This GaussianProcessRegressor instance is not fitted yet'.)
     """
-
-
-class PymcLearnError(Exception):
-    pass

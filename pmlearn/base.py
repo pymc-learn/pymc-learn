@@ -12,7 +12,7 @@ import seaborn as sns
 from sklearn.base import BaseEstimator
 from sklearn.base import RegressorMixin, ClassifierMixin, DensityMixin
 
-from .exceptions import PymcLearnError
+from .exceptions import NotFittedError
 
 
 class BayesianModel(BaseEstimator):
@@ -64,7 +64,7 @@ class BayesianModel(BaseEstimator):
         elif inference_type == 'nuts':
             self._nuts_inference(inference_args)
         else:
-            raise PymcLearnError('{} is not a supported type'
+            raise NotFittedError('{} is not a supported type'
                                  ' of inference'.format(inference_type))
 
     def _advi_inference(self, inference_args):
@@ -185,7 +185,7 @@ class BayesianModel(BaseEstimator):
         Plot the ELBO values after running ADVI minibatch.
         """
         if self.inference_type != 'advi':
-            raise PymcLearnError(
+            raise NotFittedError(
                 'This method should only be called after calling fit with '
                 'ADVI minibatch.'
             )
@@ -266,7 +266,7 @@ class BayesianRegressorMixin(RegressorMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError('Run fit on the model before predict.')
+            raise NotFittedError('Run fit on the model before predict.')
 
         num_samples = X.shape[0]
 
@@ -354,7 +354,7 @@ class BayesianClassifierMixin(ClassifierMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError('Run fit on the model before predict.')
+            raise NotFittedError('Run fit on the model before predict.')
 
         num_samples = X.shape[0]
 
@@ -463,7 +463,7 @@ class BayesianDensityMixin(DensityMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError('Run fit on the model before predict.')
+            raise NotFittedError('Run fit on the model before predict.')
 
         # num_samples = X.shape[0]
 

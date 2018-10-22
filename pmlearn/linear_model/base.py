@@ -14,7 +14,7 @@ from sklearn.base import ClassifierMixin
 from sklearn.metrics import accuracy_score
 
 from ..base import BayesianModel, BayesianRegressorMixin
-from ..exceptions import PymcLearnError
+from ..exceptions import NotFittedError
 
 
 class BayesianLinearClassifierMixin(ClassifierMixin):
@@ -97,7 +97,7 @@ class BayesianLinearClassifierMixin(ClassifierMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError('Run fit on the model before predict.')
+            raise NotFittedError('Run fit on the model before predict.')
 
         num_samples = X.shape[0]
 
@@ -113,7 +113,7 @@ class BayesianLinearClassifierMixin(ClassifierMixin):
         ppc = pm.sample_ppc(self.trace, model=self.cached_model, samples=2000)
 
         if return_std:
-            return ppc['y'].mean(axis=0), ppc['o'].std(axis=0)
+            return ppc['y'].mean(axis=0), ppc['y'].std(axis=0)
         else:
             return ppc['y'].mean(axis=0)
 

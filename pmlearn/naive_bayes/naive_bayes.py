@@ -14,7 +14,7 @@ import pymc3 as pm
 import scipy.stats
 import theano
 
-from ..exceptions import PymcLearnError
+from ..exceptions import NotFittedError
 from ..base import BayesianModel, BayesianClassifierMixin
 
 
@@ -121,7 +121,7 @@ class GaussianNBClassifierMixin(BayesianClassifierMixin):
         """
 
         if self.trace is None:
-            raise PymcLearnError("Run fit() on the model before predict()")
+            raise NotFittedError("Run fit() on the model before predict()")
 
         posterior_prediction = np.array([])
         for x in X:

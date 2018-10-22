@@ -6,18 +6,18 @@
 
 # import pytest
 import numpy.testing as npt
+# import pandas.testing as pdt
 import shutil
 import tempfile
 
 import numpy as np
-# import pandas as pd
 import pymc3 as pm
 # from pymc3 import summary
 # from sklearn.gaussian_process import \
 #     GaussianProcessRegressor as skGaussianProcessRegressor
 # from sklearn.model_selection import train_test_split
-
-
+#
+#
 # from pmlearn.exceptions import NotFittedError
 from pmlearn.gaussian_process import (GaussianProcessRegressor)
 # ,

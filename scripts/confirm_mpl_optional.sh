@@ -7,6 +7,6 @@ if pip freeze | grep -q matplotlib
 then 
     pip uninstall -y matplotlib
 fi
-python -c 'from pymc-learn import *'
+python -c 'from pmlearn import *'
 
 pip install matplotlib

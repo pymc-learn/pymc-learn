@@ -9,7 +9,7 @@ from pymc3 import summary
 from sklearn.mixture import BayesianGaussianMixture as skBayesianGaussianMixture
 from sklearn.model_selection import train_test_split
 
-from pmlearn.exceptions import PymcLearnError
+from pmlearn.exceptions import NotFittedError
 from pmlearn.mixture import DirichletProcessMixture
 
 
@@ -154,7 +154,7 @@ class DirichletProcessMixturePredictTestCase(DirichletProcessMixtureTestCase):
 
     def test_predict_raises_error_if_not_fit(self):
         print('')
-        with self.assertRaises(PymcLearnError) as no_fit_error:
+        with self.assertRaises(NotFittedError) as no_fit_error:
             test_DPMM = DirichletProcessMixture()
             test_DPMM.predict(self.X_train)
 

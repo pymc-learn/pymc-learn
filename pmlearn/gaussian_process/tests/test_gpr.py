@@ -22,9 +22,6 @@ from pmlearn.exceptions import NotFittedError
 from pmlearn.gaussian_process import (GaussianProcessRegressor,
                                       StudentsTProcessRegressor,
                                       SparseGaussianProcessRegressor)
-# ,
-#                                       SparseGaussianProcessRegressor,
-#                                       StudentsTProcessRegressor)
 
 
 class TestGaussianProcessRegressor(object):

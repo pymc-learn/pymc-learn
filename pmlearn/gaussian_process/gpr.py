@@ -173,7 +173,8 @@ class GaussianProcessRegressor(BayesianModel,
         self.num_training_samples = params['num_training_samples']
 
 
-class StudentsTProcessRegressor(GaussianProcessRegressor):
+class StudentsTProcessRegressor(BayesianModel,
+                                GaussianProcessRegressorMixin):
     """ StudentsT Process Regression built using PyMC3.
 
     Fit a StudentsT process model and estimate model parameters using
@@ -204,8 +205,15 @@ class StudentsTProcessRegressor(GaussianProcessRegressor):
     Rasmussen and Williams (2006). Gaussian Processes for Machine Learning.
     """
 
-    def __init__(self, prior_mean=0.0):
-        super(StudentsTProcessRegressor, self).__init__(prior_mean=prior_mean)
+    def __init__(self, prior_mean=None, kernel=None):
+        self.ppc = None
+        self.gp = None
+        self.num_training_samples = None
+        self.num_pred = None
+        self.prior_mean = prior_mean
+        self.kernel = kernel
+
+        super(StudentsTProcessRegressor, self).__init__()
 
     def create_model(self):
         """ Creates and returns the PyMC3 model.
@@ -241,13 +249,17 @@ class StudentsTProcessRegressor(GaussianProcessRegressor):
             degrees_of_freedom = pm.Gamma('degrees_of_freedom', alpha=2,
                                           beta=0.1, shape=1)
 
-            # cov_function = signal_variance**2 * pm.gp.cov.ExpQuad(
-            # 1, length_scale)
-            cov_function = signal_variance ** 2 * pm.gp.cov.Matern52(
-                1, length_scale)
+            if self.kernel is None:
+                cov_function = signal_variance ** 2 * RBF(
+                    input_dim=self.num_pred,
+                    ls=length_scale)
+            else:
+                cov_function = self.kernel
 
-            # mean_function = pm.gp.mean.Zero()
-            mean_function = pm.gp.mean.Constant(self.prior_mean)
+            if self.prior_mean is None:
+                mean_function = pm.gp.mean.Zero()
+            else:
+                mean_function = self.prior_mean
 
             self.gp = pm.gp.Latent(mean_func=mean_function,
                                    cov_func=cov_function)
@@ -277,7 +289,8 @@ class StudentsTProcessRegressor(GaussianProcessRegressor):
         self.num_training_samples = params['num_training_samples']
 
 
-class SparseGaussianProcessRegressor(GaussianProcessRegressor):
+class SparseGaussianProcessRegressor(BayesianModel,
+                                     GaussianProcessRegressorMixin):
     """ Sparse Gaussian Process Regression built using PyMC3.
 
     Fit a Sparse Gaussian process model and estimate model parameters using
@@ -308,9 +321,15 @@ class SparseGaussianProcessRegressor(GaussianProcessRegressor):
     Rasmussen and Williams (2006). Gaussian Processes for Machine Learning.
     """
 
-    def __init__(self, prior_mean=0.0):
-        super(SparseGaussianProcessRegressor, self).__init__(
-            prior_mean=prior_mean)
+    def __init__(self, prior_mean=None, kernel=None):
+        self.ppc = None
+        self.gp = None
+        self.num_training_samples = None
+        self.num_pred = None
+        self.prior_mean = prior_mean
+        self.kernel = kernel
+
+        super(SparseGaussianProcessRegressor, self).__init__()
 
     def create_model(self):
         """ Creates and returns the PyMC3 model.
@@ -344,13 +363,17 @@ class SparseGaussianProcessRegressor(GaussianProcessRegressor):
             noise_variance = pm.HalfCauchy('noise_variance', beta=5,
                                            shape=1)
 
-            # cov_function = signal_variance**2 * pm.gp.cov.ExpQuad(
-            # 1, length_scale)
-            cov_function = signal_variance ** 2 * pm.gp.cov.Matern52(
-                1, length_scale)
+            if self.kernel is None:
+                cov_function = signal_variance ** 2 * RBF(
+                    input_dim=self.num_pred,
+                    ls=length_scale)
+            else:
+                cov_function = self.kernel
 
-            # mean_function = pm.gp.mean.Zero()
-            mean_function = pm.gp.mean.Constant(self.prior_mean)
+            if self.prior_mean is None:
+                mean_function = pm.gp.mean.Zero()
+            else:
+                mean_function = self.prior_mean
 
             self.gp = pm.gp.MarginalSparse(mean_func=mean_function,
                                            cov_func=cov_function,

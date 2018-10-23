@@ -262,8 +262,8 @@ project: https://github.com/parsing-science/pymc3_models.
 .. |Travis| image:: https://travis-ci.com/pymc-learn/pymc-learn.svg?branch=master
    :target: https://travis-ci.com/pymc-learn/pymc-learn
 
-.. |Coverage| image:: https://coveralls.io/repos/github/pymc-learn/pymc-learn/badge.svg?branch=master
-   :target: https://coveralls.io/github/pymc-learn/pymc-learn?branch=master
+.. |Coverage| image:: https://coveralls.io/repos/github/pymc-learn/pymc-learn/badge.svg
+   :target: https://coveralls.io/github/pymc-learn/pymc-learn
 
 .. |Python27| image:: https://img.shields.io/badge/python-2.7-blue.svg
    :target: https://badge.fury.io/py/pymc-learn

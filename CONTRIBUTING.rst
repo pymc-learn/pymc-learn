@@ -104,7 +104,7 @@ For the most part, this library follows PEP8 with a couple of exceptions.
 Notes:
 
 - Indent with 4 spaces
-- Lines can be 120 characters long
+- Lines should be a maximum of 80 characters long
 - Docstrings should be written as numpy docstrings
 - Your code should be Python 3 compatible
 - When in doubt, follow the style of the existing code

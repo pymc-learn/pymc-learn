@@ -14,11 +14,11 @@ you may be compelled to use ``pymc-learn``.
 pymc-learn prioritizes user experience
 ---------------------------------------
 
-- ``pymc-learn`` mimics the syntax of `scikit-learn <https://scikit-learn.org>`_ -- a popular Python library for machine learning -- which has a consistent & simple API, and is very user friendly.
+- *Familiarity*: ``pymc-learn`` mimics the syntax of `scikit-learn <https://scikit-learn.org>`_ -- a popular Python library for machine learning -- which has a consistent & simple API, and is very user friendly.
 
-- This makes ``pymc-learn`` easy to learn and use for first-time users.
+- *Ease of use*: This makes ``pymc-learn`` easy to learn and use for first-time users.
 
-- For scikit-learn users, you don't have to completely rewrite your code. Your code looks almost the same. You are more productive, allowing you to try more ideas faster.
+- *Productivity*: For scikit-learn users, you don't have to completely rewrite your code. Your code looks almost the same. You are more productive, allowing you to try more ideas faster.
 
 .. code-block:: python
 
@@ -27,11 +27,55 @@ pymc-learn prioritizes user experience
     lr = LinearRegression()                             lr = LinearRegression()
     lr.fit(X, y)                                        lr.fit(X, y)
 
-- This ease of use does not come at the cost of reduced flexibility: because ``pymc-learn`` integrates with `PyMC3 <https://docs.pymc.io>`_, it enables you to implement anything you could have built in the base language.
+- *Flexibility*: This ease of use does not come at the cost of reduced flexibility. Given that ``pymc-learn`` integrates with `PyMC3 <https://docs.pymc.io>`_, it enables you to implement anything you could have built in the base language.
 
+- *Performance*. The primary inference algorithm is gradient-based automatic differentiation variational inference (ADVI) (Kucukelbir et al., 2017), which estimates a divergence measure between approximate and true posterior distributions. Pymc-learn scales to complex, high-dimensional models thanks to GPU-accelerated tensor math and reverse-mode automatic differentiation via Theano (Theano Development Team, 2016), and it scales to large datasets thanks to estimates computed over mini-batches of data in ADVI.
 
 ----
 
+
+Why do we need pymc-learn?
+--------------------------
+Currently, there is a growing need for principled machine learning approaches by
+non-specialists in many fields including the pure sciences (e.g. biology, physics,
+chemistry), the applied sciences (e.g. political science, biostatistics),
+engineering (e.g. transportation, mechanical), medicine (e.g. medical imaging),
+the arts (e.g visual art), and software industries.
+
+This has lead to increased adoption of probabilistic modeling. This trend is
+attributed in part to three major factors:
+
+(1) the need for transparent models with calibrated quantities of uncertainty, i.e. "models should know when they don't know",
+
+(2) the ever-increasing number of promising results achieved on a variety of fundamental problems in AI (Ghahramani, 2015), and
+
+(3) the emergency of probabilistic programming languages (PPLs) that provide a fexible framework to build richly structured probabilistic models that incorporate domain knowledge.
+
+However, usage of PPLs requires a specialized understanding of probability
+theory, probabilistic graphical modeling, and probabilistic inference. Some PPLs
+also require a good command of software coding. These requirements make it
+difficult for non-specialists to adopt and apply probabilistic machine learning
+to their domain problems.
+
+``Pymc-learn`` seeks to address these challenges by providing state-of-the art
+implementations of several popular probabilistic machine learning models.
+**It is inspired by scikit-learn** (Pedregosa et al., 2011) **and focuses on
+bringing probabilistic machine learning to non-specialists**. It puts emphasis
+on:
+
+(1) ease of use,
+
+(2) productivity,
+
+(3) fexibility,
+
+(4) performance,
+
+(5) documentation, and
+
+(6) an API consistent with scikit-learn.
+
+The underlying probabilistic models are built using pymc3 (Salvatier et al., 2016).
 
 
 Python is the lingua franca of Data Science
@@ -138,3 +182,9 @@ References
 4. Barber, D. (2012). Bayesian reasoning and machine learning. Cambridge University Press.
 
 5. Salvatier, J., Wiecki, T. V., & Fonnesbeck, C. (2016). Probabilistic programming in Python using PyMC3. PeerJ Computer Science, 2, e55.
+
+6. Alp Kucukelbir, Dustin Tran, Rajesh Ranganath, Andrew Gelman, and David M Blei. Automatic differentiation variational inference. The Journal of Machine Learning Research, 18(1):430{474, 2017.
+
+7. Fabian Pedregosa, Gael Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, et al. Scikit-learn: Machine learning in python. Journal of machine learning research, 12(Oct): 2825-2830, 2011.
+
+8. Theano Development Team. Theano: A Python framework for fast computation of mathematical expressions. arXiv e-prints, abs/1605.02688, May 2016. URL http://arxiv.org/abs/1605.02688.

@@ -27,8 +27,15 @@ What is pymc-learn?
 *pymc-learn is a library for practical probabilistic
 machine learning in Python*.
 
-It provides probabilistic models in a syntax that mimics
-`scikit-learn <http://scikit-learn.org>`_.
+It provides a variety of state-of-the art probabilistic models for supervised
+and unsupervised machine learning. **It is inspired by**
+`scikit-learn <http://scikit-learn.org>`_ **and focuses on bringing probabilistic
+machine learning to non-specialists**. It uses a syntax that mimics scikit-learn.
+Emphasis is put on ease of use, productivity, flexibility, performance,
+documentation, and an API consistent with scikit-learn. It depends on scikit-learn
+and `PyMC3 <https://docs.pymc.io/>`_ and is distributed under the new BSD-3 license,
+encouraging its use in both academia and industry.
+
 Users can now have calibrated quantities of uncertainty in their models
 using powerful inference algorithms -- such as MCMC or Variational inference --
 provided by `PyMC3 <https://docs.pymc.io/>`_.
@@ -63,19 +70,29 @@ parameters and predictions.
 Quick Install
 -----------------
 
-You can install ``pymc-learn`` from source as follows:
+You can install ``pymc-learn`` from PyPi using pip as follows:
+
+.. code-block:: bash
+
+   pip install pymc-learn
+
+
+Or from source as follows:
 
 .. code-block:: bash
 
    pip install git+https://github.com/pymc-learn/pymc-learn
 
 
+.. CAUTION::
+   ``pymc-learn`` is under heavy development.
+
 Dependencies
 ................
 
 ``pymc-learn`` is tested on Python 2.7, 3.5 & 3.6 and depends on Theano,
-PyMC3, NumPy, SciPy, and Matplotlib (see ``requirements.txt`` for version
-information).
+PyMC3, Scikit-learn, NumPy, SciPy, and Matplotlib (see ``requirements.txt``
+for version information).
 
 ----
 
@@ -92,9 +109,9 @@ Quick Start
     >>> X, y = make_friedman2(n_samples=500, noise=0, random_state=0)
     >>> kernel = DotProduct() + WhiteKernel()
     >>> gpr = GaussianProcessRegressor(kernel=kernel).fit(X, y)
-    >>> gpr.score(X, y) # doctest: +ELLIPSIS
+    >>> gpr.score(X, y)
     0.3680...
-    >>> gpr.predict(X[:2,:], return_std=True) # doctest: +ELLIPSIS
+    >>> gpr.predict(X[:2,:], return_std=True)
     (array([653.0..., 592.1...]), array([316.6..., 316.6...]))
 
 ----
@@ -124,18 +141,18 @@ Citing pymc-learn
 
 To cite ``pymc-learn`` in publications, please use the following::
 
-   Pymc-learn Developers Team (2019). pymc-learn: Practical probabilistic machine
-   learning in Python. arXiv preprint arXiv:xxxx.xxxxx. Forthcoming.
+   Emaasit, Daniel (2018). Pymc-learn: Practical probabilistic machine
+   learning in Python. arXiv preprint arXiv:1810.xxxxx.
 
 Or using BibTex as follows:
 
 .. code-block:: latex
 
-    @article{Pymc-learn,
-      title={pymc-learn: Practical probabilistic machine learning in {P}ython},
-      author={Pymc-learn Developers Team},
-      journal={arXiv preprint arXiv:xxxx.xxxxx},
-      year={2019}
+    @article{emaasit2018pymc,
+      title={Pymc-learn: Practical probabilistic machine learning in {P}ython},
+      author={Emaasit, Daniel and others},
+      journal={arXiv preprint arXiv:1810.xxxxx},
+      year={2018}
     }
 
 If you want to cite ``pymc-learn`` for its API, you may also want to consider
@@ -186,8 +203,7 @@ Index
 **User Guide**
 
 The main documentation. This contains an in-depth description of all models
-and how to apply them. ``pymc-learn`` leverages the Base template provided by the PyMC3 Models
-project: https://github.com/parsing-science/pymc3_models.
+and how to apply them.
 
 * :doc:`user_guide`
 
@@ -225,8 +241,8 @@ in a familiar scikit-learn syntax.
 
 **API Reference**
 
-``pymc-learn`` leverages the Base template provided by the PyMC3 Models
-project: https://github.com/parsing-science/pymc3_models.
+``pymc-learn`` leverages and extends the Base template provided by the PyMC3
+Models project: https://github.com/parsing-science/pymc3_models.
 
 * :doc:`api`
 

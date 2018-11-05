@@ -3,18 +3,18 @@ Citations
 
 To cite ``pymc-learn`` in publications, please use the following::
 
-   Pymc-learn Developers Team (2019). pymc-learn: Practical probabilistic machine
-   learning in Python. arXiv preprint arXiv:xxxx.xxxxx. Forthcoming.
+   Emaasit, Daniel (2018). Pymc-learn: Practical probabilistic machine
+   learning in Python. arXiv preprint arXiv:1811.00542.
 
 Or using BibTex as follows:
 
 .. code-block:: latex
 
-    @article{Pymc-learn,
-      title={pymc-learn: Practical probabilistic machine learning in {P}ython},
-      author={Pymc-learn Developers Team},
-      journal={arXiv preprint arXiv:xxxx.xxxxx},
-      year={2019}
+    @article{emaasit2018pymc,
+      title={Pymc-learn: Practical probabilistic machine learning in {P}ython},
+      author={Emaasit, Daniel and others},
+      journal={arXiv preprint arXiv:1811.00542},
+      year={2018}
     }
 
 If you want to cite ``pymc-learn`` for its API, you may also want to consider

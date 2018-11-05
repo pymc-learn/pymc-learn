@@ -26,15 +26,7 @@ Or from source as follows:
    ``pymc-learn`` is under heavy development.
 
 
-This also installs required dependencies including Theano.
-For alternative Theano installations (e.g., gpu), please see the
-instructions on the main `Theano webpage <http://deeplearning.net/software/theano/>`_.
+This also installs required dependencies including TensorFlow.
+For alternative TensorFlow installations (e.g., gpu), please see the
+instructions on the main `TensorFlow webpage <https://www.tensorflow.org/>`_.
 
-Transitioning from PyMC3 to PyMC4
-..................................
-
-.. raw:: html
-
-    <embed>
-        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/pymc_learn?ref_src=twsrc%5Etfw">@pymc_learn</a> has been following closely the development of <a href="https://twitter.com/hashtag/PyMC4?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC4</a> with the aim of switching its backend from <a href="https://twitter.com/hashtag/PyMC3?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC3</a> to PyMC4 as the latter grows to maturity. Core devs are invited. Here&#39;s the tentative roadmap for PyMC4: <a href="https://t.co/Kwjkykqzup">https://t.co/Kwjkykqzup</a> cc <a href="https://twitter.com/pymc_devs?ref_src=twsrc%5Etfw">@pymc_devs</a> <a href="https://t.co/Ze0tyPsIGH">https://t.co/Ze0tyPsIGH</a></p>&mdash; pymc-learn (@pymc_learn) <a href="https://twitter.com/pymc_learn/status/1059474316801249280?ref_src=twsrc%5Etfw">November 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </embed>

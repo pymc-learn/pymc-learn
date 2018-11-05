@@ -1,14 +1,13 @@
 Changelog
 =========
 
-0.0.1 / 2019-01-01
+0.4.0 / 2019-10-11
 -------------------
 
 Models
 +++++++
 
--  Added Gaussian process regression, students t process, sparse gaussian process
--  Added Multilayer perceptron
+-  Added Linear Regression model
 
 
 Documentation

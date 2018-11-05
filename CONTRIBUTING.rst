@@ -1,6 +1,6 @@
-Thank you for considering contributing to ``pymc-learn``! This project is intended to be a space where anyone can share models they've built.
+Thank you for considering contributing to ``pymc-learn``!
 
-Please read these guidelines before submitting anything to the project. As of the first release, I'm the only person working on this project so respecting these guidelines will help me get back to you more quickly.
+Please read these guidelines before submitting anything to the project.
 
 Some ways to contribute:
 
@@ -8,11 +8,12 @@ Some ways to contribute:
 - Improve the docs!
 - Add a new machine-learning model. Please follow the guidelines below.
 - Add/change existing functionality in the base function classes for ML.
-- Something I haven't thought of?
+- Something else.
 
 Pull/Merge Requests
 ---------------------
-To create a Pull Request against this library, please fork the project and work from there.
+To create a Pull Request against this library,
+please fork the project and work from there.
 
 Steps
 ................
@@ -34,7 +35,8 @@ Steps
 
      git checkout -b my-new-feature-branch
 
-Always use a ``feature`` branch. It's good practice to never routinely work on the ``master`` branch.
+Always use a ``feature`` branch. It's good practice to never routinely work on
+the ``master`` branch.
 
 4. Install requirements (probably in a virtual environment)
 
@@ -108,12 +110,3 @@ Notes:
 - Docstrings should be written as numpy docstrings
 - Your code should be Python 3 compatible
 - When in doubt, follow the style of the existing code
-
-Transitioning from PyMC3 to PyMC4
------------------------------------
-
-.. raw:: html
-
-    <embed>
-        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/pymc_learn?ref_src=twsrc%5Etfw">@pymc_learn</a> has been following closely the development of <a href="https://twitter.com/hashtag/PyMC4?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC4</a> with the aim of switching its backend from <a href="https://twitter.com/hashtag/PyMC3?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC3</a> to PyMC4 as the latter grows to maturity. Core devs are invited. Here&#39;s the tentative roadmap for PyMC4: <a href="https://t.co/Kwjkykqzup">https://t.co/Kwjkykqzup</a> cc <a href="https://twitter.com/pymc_devs?ref_src=twsrc%5Etfw">@pymc_devs</a> <a href="https://t.co/Ze0tyPsIGH">https://t.co/Ze0tyPsIGH</a></p>&mdash; pymc-learn (@pymc_learn) <a href="https://twitter.com/pymc_learn/status/1059474316801249280?ref_src=twsrc%5Etfw">November 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </embed>

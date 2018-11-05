@@ -27,9 +27,9 @@ pymc-learn prioritizes user experience
     lr = LinearRegression()                             lr = LinearRegression()
     lr.fit(X, y)                                        lr.fit(X, y)
 
-- *Flexibility*: This ease of use does not come at the cost of reduced flexibility. Given that ``pymc-learn`` integrates with `PyMC3 <https://docs.pymc.io>`_, it enables you to implement anything you could have built in the base language.
+- *Flexibility*: This ease of use does not come at the cost of reduced flexibility. Given that ``pymc-learn`` integrates with `PyMC4 <https://docs.pymc.io>`_, it enables you to implement anything you could have built in the base language.
 
-- *Performance*. The primary inference algorithm is gradient-based automatic differentiation variational inference (ADVI) (Kucukelbir et al., 2017), which estimates a divergence measure between approximate and true posterior distributions. Pymc-learn scales to complex, high-dimensional models thanks to GPU-accelerated tensor math and reverse-mode automatic differentiation via Theano (Theano Development Team, 2016), and it scales to large datasets thanks to estimates computed over mini-batches of data in ADVI.
+- *Performance*. The primary inference algorithm is gradient-based automatic differentiation variational inference (ADVI) (Kucukelbir et al., 2017), which estimates a divergence measure between approximate and true posterior distributions. Pymc-learn scales to complex, high-dimensional models thanks to GPU-accelerated tensor math and reverse-mode automatic differentiation via TensorFlow (TensorFlow Development Team, 2016), and it scales to large datasets thanks to estimates computed over mini-batches of data in ADVI.
 
 ----
 
@@ -75,17 +75,8 @@ on:
 
 (6) an API consistent with scikit-learn.
 
-The underlying probabilistic models are built using pymc3 (Salvatier et al., 2016).
+The underlying probabilistic models are built using pymc4 (Salvatier et al., 2019).
 
-
-Transitioning from PyMC3 to PyMC4
-..................................
-
-.. raw:: html
-
-    <embed>
-        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/pymc_learn?ref_src=twsrc%5Etfw">@pymc_learn</a> has been following closely the development of <a href="https://twitter.com/hashtag/PyMC4?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC4</a> with the aim of switching its backend from <a href="https://twitter.com/hashtag/PyMC3?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC3</a> to PyMC4 as the latter grows to maturity. Core devs are invited. Here&#39;s the tentative roadmap for PyMC4: <a href="https://t.co/Kwjkykqzup">https://t.co/Kwjkykqzup</a> cc <a href="https://twitter.com/pymc_devs?ref_src=twsrc%5Etfw">@pymc_devs</a> <a href="https://t.co/Ze0tyPsIGH">https://t.co/Ze0tyPsIGH</a></p>&mdash; pymc-learn (@pymc_learn) <a href="https://twitter.com/pymc_learn/status/1059474316801249280?ref_src=twsrc%5Etfw">November 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </embed>
 
 Python is the lingua franca of Data Science
 --------------------------------------------
@@ -112,27 +103,17 @@ notebooks, collaboration, and so forth.
 
 ----
 
-Why scikit-learn and PyMC3
+Why scikit-learn and PyMC4
 ---------------------------
-PyMC3 is a Python package for probabilistic machine learning that enables users
+PyMC4 is a Python package for probabilistic machine learning that enables users
 to build bespoke models for their specific problems using a probabilistic
-modeling framework. However, PyMC3 lacks the steps between creating a model and
-reusing it with new data in production. The missing steps include: scoring a
-model, saving a model for later use, and loading the model in production
-systems.
+modeling framework.
 
-In contrast, *scikit-learn* which has become the standard
+*scikit-learn* which has become the standard
 library for machine learning provides a simple API that makes it very easy for
-users to train, score, save and load models in production. However,
-*scikit-learn* may not have the model for a user's specific problem.
-These limitations have led to the development of the open
-source *pymc3-models* library which provides a template to build bespoke
-PyMC3 models on top of the *scikit-learn* API and reuse them in
-production. This enables users to easily and quickly train, score, save and
-load their bespoke models just like in *scikit-learn*.
+users to train, score, save and load models in production.
 
-The ``pymc-learn`` project adopted and extended the template in *pymc3-models*
-to develop probabilistic versions of the estimators in *scikit-learn*.
+The ``pymc-learn`` project developed probabilistic versions of the estimators in *scikit-learn*.
 This provides users with probabilistic models in a simple workflow that mimics
 the scikit-learn API.
 
@@ -190,10 +171,10 @@ References
 
 4. Barber, D. (2012). Bayesian reasoning and machine learning. Cambridge University Press.
 
-5. Salvatier, J., Wiecki, T. V., & Fonnesbeck, C. (2016). Probabilistic programming in Python using PyMC3. PeerJ Computer Science, 2, e55.
+5. PyMC4.
 
 6. Alp Kucukelbir, Dustin Tran, Rajesh Ranganath, Andrew Gelman, and David M Blei. Automatic differentiation variational inference. The Journal of Machine Learning Research, 18(1):430{474, 2017.
 
 7. Fabian Pedregosa, Gael Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, et al. Scikit-learn: Machine learning in python. Journal of machine learning research, 12(Oct): 2825-2830, 2011.
 
-8. Theano Development Team. Theano: A Python framework for fast computation of mathematical expressions. arXiv e-prints, abs/1605.02688, May 2016. URL http://arxiv.org/abs/1605.02688.
+8. TensorFlow

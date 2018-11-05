@@ -33,28 +33,14 @@ and unsupervised machine learning. **It is inspired by**
 machine learning to non-specialists**. It uses a syntax that mimics scikit-learn.
 Emphasis is put on ease of use, productivity, flexibility, performance,
 documentation, and an API consistent with scikit-learn. It depends on scikit-learn
-and `PyMC3 <https://docs.pymc.io/>`_ and is distributed under the new BSD-3 license,
+and `PyMC4 <https://docs.pymc.io/>`_ and is distributed under the new BSD-3 license,
 encouraging its use in both academia and industry.
 
 Users can now have calibrated quantities of uncertainty in their models
 using powerful inference algorithms -- such as MCMC or Variational inference --
-provided by `PyMC3 <https://docs.pymc.io/>`_.
+provided by `PyMC4 <https://docs.pymc.io/>`_.
 See :doc:`why` for a more detailed description of why ``pymc-learn`` was
 created.
-
-.. NOTE::
-   ``pymc-learn`` leverages and extends the Base template provided by the
-   PyMC3 Models project: https://github.com/parsing-science/pymc3_models
-
-
-Transitioning from PyMC3 to PyMC4
-..................................
-
-.. raw:: html
-
-    <embed>
-        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/pymc_learn?ref_src=twsrc%5Etfw">@pymc_learn</a> has been following closely the development of <a href="https://twitter.com/hashtag/PyMC4?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC4</a> with the aim of switching its backend from <a href="https://twitter.com/hashtag/PyMC3?src=hash&amp;ref_src=twsrc%5Etfw">#PyMC3</a> to PyMC4 as the latter grows to maturity. Core devs are invited. Here&#39;s the tentative roadmap for PyMC4: <a href="https://t.co/Kwjkykqzup">https://t.co/Kwjkykqzup</a> cc <a href="https://twitter.com/pymc_devs?ref_src=twsrc%5Etfw">@pymc_devs</a> <a href="https://t.co/Ze0tyPsIGH">https://t.co/Ze0tyPsIGH</a></p>&mdash; pymc-learn (@pymc_learn) <a href="https://twitter.com/pymc_learn/status/1059474316801249280?ref_src=twsrc%5Etfw">November 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </embed>
 
 ----
 
@@ -100,8 +86,8 @@ Or from source as follows:
 Dependencies
 ................
 
-``pymc-learn`` is tested on Python 2.7, 3.5 & 3.6 and depends on Theano,
-PyMC3, Scikit-learn, NumPy, SciPy, and Matplotlib (see ``requirements.txt``
+``pymc-learn`` is tested on Python 2.7, 3.5 & 3.6 and depends on TensorFlow,
+PyMC4, Scikit-learn, NumPy, SciPy, and Matplotlib (see ``requirements.txt``
 for version information).
 
 ----
@@ -142,7 +128,7 @@ Differentation Variational Inference (ADVI) is illustrated in the code below.
 
 Instead of drawing samples from the posterior, these algorithms fit
 a distribution (e.g. normal) to the posterior turning a sampling problem into
-an optimization problem. ADVI is provided PyMC3.
+an optimization problem. ADVI is provided PyMC4.
 
 ----
 
@@ -162,24 +148,6 @@ Or using BibTex as follows:
       title={Pymc-learn: Practical probabilistic machine learning in {P}ython},
       author={Emaasit, Daniel and others},
       journal={arXiv preprint arXiv:1811.00542},
-      year={2018}
-    }
-
-If you want to cite ``pymc-learn`` for its API, you may also want to consider
-this reference::
-
-   Carlson, Nicole (2018). Custom PyMC3 models built on top of the scikit-learn
-   API. https://github.com/parsing-science/pymc3_models
-
-Or using BibTex as follows:
-
-.. code-block:: latex
-
-    @article{Pymc3_models,
-      title={pymc3_models: Custom PyMC3 models built on top of the scikit-learn API,
-      author={Carlson, Nicole},
-      journal={},
-      url={https://github.com/parsing-science/pymc3_models}
       year={2018}
     }
 
@@ -250,9 +218,6 @@ in a familiar scikit-learn syntax.
 ----
 
 **API Reference**
-
-``pymc-learn`` leverages and extends the Base template provided by the PyMC3
-Models project: https://github.com/parsing-science/pymc3_models.
 
 * :doc:`api`
 

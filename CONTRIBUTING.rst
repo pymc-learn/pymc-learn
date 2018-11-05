@@ -1,6 +1,5 @@
-Thank you for considering contributing to ``pymc-learn``! This project is intended to be a space where anyone can share models they've built.
-
-Please read these guidelines before submitting anything to the project. As of the first release, I'm the only person working on this project so respecting these guidelines will help me get back to you more quickly.
+Thank you for considering contributing to ``pymc-learn``! Please read these
+guidelines before submitting anything to the project.
 
 Some ways to contribute:
 
@@ -62,7 +61,7 @@ in case there have been any changes:
      git fetch upstream
      git rebase upstream/master
 
-Then push the changes to your Gitlab account with:
+Then push the changes to your Github account with:
 
    .. code-block:: bash
 
@@ -75,8 +74,8 @@ Pull Request Checklist
 ................................
 
 - Ensure your code has followed the Style Guidelines below
-- Make sure you have written unittests where appropriate
-- Make sure the unittests pass
+- Make sure you have written tests where appropriate
+- Make sure the tests pass
 
    .. code-block:: bash
 
@@ -104,10 +103,17 @@ For the most part, this library follows PEP8 with a couple of exceptions.
 Notes:
 
 - Indent with 4 spaces
-- Lines should be a maximum of 80 characters long
+- Lines can be 80 characters long
 - Docstrings should be written as numpy docstrings
 - Your code should be Python 3 compatible
 - When in doubt, follow the style of the existing code
+
+Contact
+.............
+
+To report an issue with ``pymc-learn`` please use the `issue tracker <https://github.com/pymc-learn/pymc-learn/issues>`__.
+
+Finally, if you need to get in touch for information about the project, `send us an e-mail <devs@pymc-learn.org>`__.
 
 Transitioning from PyMC3 to PyMC4
 -----------------------------------

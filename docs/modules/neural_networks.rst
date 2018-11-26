@@ -7,12 +7,13 @@ Neural network models (supervised)
 .. currentmodule:: pmlearn.neural_network
 
 
-.. warning::
+.. NOTE::
 
-    This implementation is not intended for large-scale applications. In particular,
-    scikit-learn offers no GPU support. For much faster, GPU-based implementations,
-    as well as frameworks offering much more flexibility to build deep learning
-    architectures, see  :ref:`related_projects`.
+    Unlike scikit-learn, this implementation of neural networks in pymc-learn is
+    intended for large-scale applications. Pymc-learn relies on Theano for GPU
+    support.
+
+    scikit-learn offers no GPU support.
 
 .. _multilayer_perceptron:
 

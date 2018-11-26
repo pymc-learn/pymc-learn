@@ -1,8 +1,8 @@
 Install pymc-learn
 ===================
 
-``pymc-learn`` requires a working Python interpreter (2.7 or 3.3+).
-It is recommend installing Python and key numerical libraries using the `Anaconda Distribution <https://www.continuum.io/downloads>`_,
+``pymc-learn`` requires a working Python interpreter (2.7 or 3.5+).
+It is recommend installing Python and key numerical libraries using the `Anaconda Distribution <https://www.anaconda.com/download/>`_,
 which has one-click installers available on all major platforms.
 
 Assuming a standard Python environment is installed on your machine
@@ -24,6 +24,12 @@ Or from source as follows:
 
 .. CAUTION::
    ``pymc-learn`` is under heavy development.
+
+   It is recommended installing ``pymc-learn`` in a Conda environment because it
+   provides `Math Kernel Library <https://anaconda.org/anaconda/mkl-service>`_ (MKL)
+   routines to accelerate math functions. If you are having trouble, try using
+   a distribution of Python that includes these packages like
+   `Anaconda <https://www.anaconda.com/download/>`_.
 
 
 This also installs required dependencies including Theano.

@@ -10,7 +10,7 @@ machine-learning as a versatile tool for science and engineering.
 See http://pymc-learn.org for complete documentation.
 """
 
-__version__ = '0.0.1.rc2'
+__version__ = '0.0.1.rc3'
 
 __all__ = ['gaussian_process',
            'linear_model',

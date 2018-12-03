@@ -144,7 +144,7 @@ class GaussianProcessRegressor(BayesianModel,
             if self.prior_mean is None:
                 mean_function = pm.gp.mean.Zero()
             else:
-                mean_function = self.prior_mean
+                mean_function = pm.gp.mean.Constant(c=self.prior_mean)
 
             self.gp = pm.gp.Latent(mean_func=mean_function,
                                    cov_func=cov_function)
@@ -259,7 +259,7 @@ class StudentsTProcessRegressor(BayesianModel,
             if self.prior_mean is None:
                 mean_function = pm.gp.mean.Zero()
             else:
-                mean_function = self.prior_mean
+                mean_function = pm.gp.mean.Constant(c=self.prior_mean)
 
             self.gp = pm.gp.Latent(mean_func=mean_function,
                                    cov_func=cov_function)
@@ -373,7 +373,7 @@ class SparseGaussianProcessRegressor(BayesianModel,
             if self.prior_mean is None:
                 mean_function = pm.gp.mean.Zero()
             else:
-                mean_function = self.prior_mean
+                mean_function = pm.gp.mean.Constant(c=self.prior_mean)
 
             self.gp = pm.gp.MarginalSparse(mean_func=mean_function,
                                            cov_func=cov_function,

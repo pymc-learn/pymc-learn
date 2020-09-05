@@ -110,7 +110,7 @@ class BayesianLinearClassifierMixin(ClassifierMixin):
             'model_cats': cats
         })
 
-        ppc = pm.sample_ppc(self.trace, model=self.cached_model, samples=2000)
+        ppc = pm.sample_posterior_predictive(self.trace, model=self.cached_model, samples=2000)
 
         if return_std:
             return ppc['y'].mean(axis=0), ppc['y'].std(axis=0)

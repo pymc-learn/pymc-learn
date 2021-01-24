@@ -88,7 +88,7 @@ class TestGaussianProcessRegressorPredict(TestGaussianProcessRegressor):
     def test_predict_returns_predictions(self):
         print('')
         self.advi_gpr.fit(self.X_train, self.y_train,
-                          inference_args={"n": 25000})
+                          inference_args={"n": 200})
         preds = self.advi_gpr.predict(self.X_test)
         npt.assert_equal(self.y_test.shape, preds.shape)
 
